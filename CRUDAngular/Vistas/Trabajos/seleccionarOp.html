@@ -1,0 +1,30 @@
+<div ng-controller="trabajosController" ng-init="SelecOp()" class="container" style="width:2500px;">
+	<br>
+	<br>
+	<h4 align="center">TRANSPORTES DISPONIBLES</h4>
+	<br>
+	<h3>Seleccione una opción para el contrato</h3>
+	<br>
+	<div>
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">SOCIO</th>
+					<th scope="col">TIPO DE BUS</th>
+					<th scope="col">CAPACIDAD</th>
+					<th scope="col">RESIDENCIA</th>
+					<th scope="col">SELECCIONAR</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="bus in seleccion">
+					<td>{{bus.socio}}</td>
+					<td>{{bus.marca}}</td>
+					<td>{{bus.capacidad}}</td>
+					<td>{{bus.reside}}</td>
+					<td><button type="button" class="btn btn-warning" ng-click="infoContrato(bus.idBus,bus.marca, bus.capacidad,bus.ano_fab, bus.placa, bus.idSocio)"><i class="fas fa-file-import"></i> Seleccionar</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

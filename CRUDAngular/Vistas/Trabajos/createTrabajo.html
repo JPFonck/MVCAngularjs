@@ -1,0 +1,86 @@
+<div class="asignacion">
+	<div class="content" ng-controller="trabajosController" ng-init="FK()">
+		<div class="topcontent">
+			<div class="title">
+				<h1>PROCESO DE ASIGNACIÓN</h1>
+			</div>
+			<div class="subtitle">
+				<h2>Datos de la empresa:</h2>
+			</div>
+			<div class="formulario">
+				<label>EMPRESA:</label>
+				<div>
+					<select class="form-control col-5" name="idEmpresa" ng-model="idEmpresa">
+						<option value="">Seleccione..</option>
+						<option ng-repeat="emp in empresas" value="{{emp.idEmpresa}}">{{emp.nombre}}</option>
+					</select>
+				</div>
+				<!--<label>DESCRIPCIÓN DE LA EMPRESA:</label>
+				<label>{{}}</label>-->
+				<br />
+			</div>
+		</div>
+		<div class="bottomcontent">
+			<div class="subtitle">
+				<h2>Requisitos de la empresa:</h2>
+			</div>
+			<div class="formulario">
+				<label>FECHA DE INICIO DE CONTRATO:</label>
+				<div class="form-group row">
+					<div class="col-5">
+						<input class="form-control" type="date" id="f_inicio" ng-model="f_inicio">
+					</div>
+				</div>
+				<!--<input type="text" name="h_inicio" ng-model="f_inicio" class="form-control" required/>-->
+				<br />
+				<label>FECHA DE FIN DE CONTRATO:</label>
+				<div class="form-group row">
+					<div class="col-5">
+						<input class="form-control" type="date" id="f_fin" ng-model="f_fin">
+					</div>
+				</div>
+				<br />
+				<label>CAPACIDAD DE PERSONAS:</label>
+				<div class="form-group row">
+					<div class="col-5">
+						<input type="number" name="n_personas" ng-model="n_personas" class="form-control" required/>
+					</div>
+				</div>
+				<br />
+				<label>HORA DE INICIO:</label>
+				<div class="form-group row">
+					<div class="col-5">
+						<input class="form-control" type="time" value="13:00:00" id="h_inicio" ng-model="h_inicio">
+					</div>
+				</div>
+				<br />
+				<label>HORA DE FIN:</label>
+				<div class="form-group row">
+					<div class="col-5">
+						<input class="form-control" type="time" value="13:00:00" id="h_fin" ng-model="h_fin">
+					</div>
+				</div>
+				<br />
+				<label>INICIO DE RUTA:</label>
+				<div>
+					<select class="form-control col-5" name="idParoquia_i" ng-model="idParroquia_i">
+						<option value="">Seleccione..</option>
+						<option ng-repeat="par in parroquias" value="{{par.idParroquia}}">{{par.nombre}}</option>
+					</select>
+				</div>
+				<br />
+				<label>FIN DE RUTA:</label>
+				<div>
+					<select class="form-control col-5" name="idParoquia_f" ng-model="idParroquia_f">
+						<option value="">Seleccione..</option>
+						<option ng-repeat="par in parroquias" value="{{par.idParroquia}}">{{par.nombre}}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<button type="button" class="btn btn-secondary" ng-controller="navController" ng-click="homeview()">Cancelar</button>
+			<input type="submit" name="btnInsertar" class="btn btn-info" ng-click="insertar()" value="BUSCAR DISPONIBILIDAD"/>
+		</div>
+	</div>
+</div>

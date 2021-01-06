@@ -1,0 +1,54 @@
+<div class="infoTrabajo"  ng-controller="trabajosController">
+	<div class="infoBody">
+		<H1>INFORMACIÓN DEL TRABAJO</H1>
+		<div class="caja">
+			<table class="table table-bordered" ng-init="mostrarinfo()">
+			<thead class="thead-dark" ng-repeat="i in info">
+				<tr>
+					<th>FECHA DE INICIO DE CONTRATO</th>
+					<td>{{i.fecha_ingreso}}</td>
+				</tr>
+				<tr>
+					<th>FECHA DE FIN DE CONTRATO</th>
+					<td>{{i.fecha_fin}}</td>
+				</tr>
+				<tr>
+					<th>HORA DE INICIO DEL TRANSPORTE</th>
+					<td>{{i.hora_entrada}}</td>
+				</tr>
+				<tr>
+					<th>HORA DE FIN DEL TRANSPORTE</th>
+					<td>{{i.hora_salida}}</td>
+				</tr>
+				<tr>
+					<th>RUTA</th>
+					<td>{{i.ruta}}</td>
+				</tr>
+				<tr>
+					<th>NUMERO DE PERSONAS TRANSPORTADAS</th>
+					<td>{{i.n_personas}}</td>
+				</tr>
+				<tr>
+					<th>IDENTIFICADOR DEL BUS</th>
+					<td>{{i.idBus}}</td>
+				</tr>
+				<tr>
+					<th>SOCIO DUEÑO DEL BUS</th>
+					<td>{{i.socio}}</td>
+				</tr>
+				<tr>
+					<th>CHOFER ASIGNADO</th>
+					<td>{{i.chofer}}</td>
+				</tr>
+				<tr>
+					<th>SERVICIO A EMPRESA</th>
+					<td>{{i.empresa}}</td>
+				</tr>
+			</thead>
+		</table>
+		</div>
+		<div class="infofooter" ng-controller="navController">
+			<button type="button" class="btn btn-info" ng-click="homeview()" >ACEPTAR</button>
+		</div>
+	</div>
+</div>

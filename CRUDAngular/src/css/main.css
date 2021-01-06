@@ -1,0 +1,54 @@
+.table td{
+	text-align: center;
+}
+.infoTrabajo{
+
+}
+.infoBody{
+    text-align: center;
+    margin-top: 40px;
+    MARGIN-BOTTOM: 50PX;
+}
+.caja{
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 330px;
+    MARGIN-BOTTOM: 26PX;
+}
+.infofooter button{
+    margin-right: 75px;
+    margin-left: 195px;
+}
+.content{
+	margin: 50px;
+	border: 2px solid black;
+}
+.topcontent{
+	border-bottom: 2px solid black;
+}
+.title{
+    text-align: center;
+    margin: 30px;
+}
+.subtitle{
+    margin-left: 150px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+.formulario{
+	margin: 50px
+}
+.bottomcontent{
+
+}
+.footer
+{
+	margin: 50px;
+}
+.asignacion{
+    margin-left: 110px;
+    margin-right: 110px;
+}
+.datos{
+    margin-right: 600px;
+}

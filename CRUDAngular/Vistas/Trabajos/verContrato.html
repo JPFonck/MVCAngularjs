@@ -1,0 +1,58 @@
+<div ng-controller="trabajosController" ng-init="mostrarinfoContrato()" class="container" style="width:2500px;">
+	<br>
+	<br>
+	<h4 align="center">VERIFICACIÓN DE CONTRATO</h4>
+	<br>
+	<div class="modal-body datos">
+		<h3>Datos del socio:</h3>
+		<label style="font-size: 20px">Nombre: </label><input class="form-control" type="text" placeholder="{{nombreSoc}}" readonly>
+		<br>
+		<label style="font-size: 20px">Teléfono: </label><input class="form-control" type="text" placeholder="{{telfSoc}}" readonly>
+		<br>
+		<label style="font-size: 20px">Correo: </label><input class="form-control" type="text" placeholder="{{correoSoc}}" readonly>
+		<br>
+		<label style="font-size: 20px">Cedula: </label><input class="form-control" type="text" placeholder="{{cedulaSoc}}" readonly>
+	</div>
+	<br>
+	<div class="modal-body datos">
+		<h3>Datos del Bus</h3>
+		<label style="font-size: 20px">Marca: </label><input class="form-control" type="text" placeholder="{{Bmarca}}" readonly>
+		<br>
+		<label style="font-size: 20px">Capacidad: </label><input class="form-control" type="text" placeholder="{{Bcapacidad}}" readonly>
+		<br>
+		<label style="font-size: 20px">Año de fabricación: </label><input class="form-control" type="text" placeholder="{{Banio}}" readonly>
+		<br>
+		<label style="font-size: 20px">Placa: </label><input class="form-control" type="text" placeholder="{{Bplaca}}" readonly>
+	</div>
+	<br>
+	<div class="modal-body datos">
+		<h3>Datos de la empresa</h3>
+		<label style="font-size: 20px">Nombre de la Empresa: </label><input class="form-control" type="text" placeholder="{{nombEmpresa}}" readonly>
+		<br>
+		<label style="font-size: 20px">Descripción de la Empresa: </label><input class="form-control" type="text" placeholder="{{descEmpresa}}" readonly>
+	</div>
+	<br>
+	<div class="modal-body datos">
+		<h3>Requisitos de la empresa</h3>
+		<label style="font-size: 20px">Capacidad del transporte: </label><input class="form-control" type="text" placeholder="{{recCap}}" readonly>
+		<br>
+		<label style="font-size: 20px">Horario: </label><input class="form-control" type="text" placeholder="{{rechora_i}} - {{rechora_f}}" readonly>
+		<br>
+		<label style="font-size: 20px">Ruta: </label><input class="form-control" type="text" placeholder="{{recruta_i}} - {{recruta_f}}" readonly>
+	</div>
+	<div class="modal-body datos">
+		<h3>Asignar Chofer:</h3>
+		<label style="font-size: 20px">Chofer: </label>
+		<div>
+			<select class="form-control col-8" name="idChofer" ng-model="idChofer">
+				<option value="">Seleccione..</option>
+				<option ng-repeat="chof in choferes" value="{{chof.idChofer}}">{{chof.apellido}} {{chof.nombre}} - Reside en: {{chof.direccion}}</option>
+			</select>
+		</div>
+	</div>
+	<div >
+		<button type="button" ng-controller="navController" ng-click="homeview()" class="btn btn-secondary">Cancelar</button>
+		<button type="button" class="btn btn-info" ng-controller="trabajosController" ng-click="crear()">AGREGAR TRABAJO</button>
+	</div>
+
+</div>

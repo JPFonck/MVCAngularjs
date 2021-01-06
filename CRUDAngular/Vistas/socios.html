@@ -1,0 +1,95 @@
+<div ng-controller="navController">
+	<nav class="navbar navbar-light bg-light">
+		<a class="nav-link " href="" ng-click="homeview()">TRABAJOS</a>
+		<a class="nav-link " href="" ng-click="oficinistasview()">OFICINISTAS</a>
+		<a class="nav-link " href="" ng-click="sociosview()">SOCIOS</a>
+		<a class="nav-link " href="" ng-click="busesview()">BUSES</a>
+		<a class="nav-link " href="" ng-click="empresasview()">EMPRESAS</a>
+		<a class="nav-link " href="" ng-click="logout()">Cerrar sesión</a>
+	</nav>
+</div>
+<br>
+<div ng-controller="sociosController" ng-init="mostrar()" class="container" style="width:2500px;">
+	<h4 align="center">LISTA DE SOCIOS</h4>
+	<br>
+	<div align="right">
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop"><i class="fas fa-plus"></i> Agregar Nuevo Socio</button>
+	</div>
+	<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">DATOS DEL NUEVO SOCIO</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancelar()">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" name="idSocio" ng-model="idSocio" class="form-control" required/>
+					<label>Nombre</label>
+					<input type="text" name="nombre" ng-model="nombre" class="form-control" required/>
+					<br />
+					<label>Apellido</label>
+					<input type="text" name="apellido" ng-model="apellido" class="form-control" required/>
+					<br />
+					<label>Cédula</label>
+					<input type="text" name="cedula" ng-model="cedula" class="form-control" required/>
+					<!--<input type="hidden" ng-model="id" name="id">-->
+					<br />
+					<label>Email</label>
+					<input type="email" name="email" ng-model="email" class="form-control" required/>
+					<br />
+					<label>Telefono</label>
+					<input type="text" name="telefono" ng-model="telefono" class="form-control" required />
+					<br />
+					<label>Nacionalidad</label>
+					<input type="text" name="nacionalidad" ng-model="nacionalidad" class="form-control" required />
+					<br />
+					<label>Dirección</label>
+					<input type="text" name="direccion" ng-model="direccion" class="form-control" required />
+					<br />
+					<label>Tipo de licencia</label>
+					<input type="text" name="tip_licencia" ng-model="tip_licencia" class="form-control" required />
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" ng-click="cancelar()" data-dismiss="modal" >Cancelar</button>
+					<input type="submit" name="btnInsertar" class="btn btn-info" ng-click="insertar()" value="{{boton}}" data-dismiss="modal"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div>
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Nombre</th>
+					<th scope="col">Apellido</th>
+					<th scope="col">Cédula</th>
+					<th scope="col">Email</th>
+					<th scope="col">Telefono</th>
+					<th scope="col">Nacionalidad</th>
+					<th scope="col">Dirección</th>
+					<th scope="col">Licencia tipo</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="socio in socios">
+					<td>{{socio.nombre}}</td>
+					<td>{{socio.apellido}}</td>
+					<td>{{socio.cedula}}</td>
+					<td>{{socio.email}}</td>
+					<td>{{socio.telefono}}</td>
+					<td>{{socio.nacionalidad}}</td>
+					<td>{{socio.direccion}}</td>
+					<td>{{socio.tip_licencia}}</td>
+					<td><button type="button" data-toggle="modal" data-target="#staticBackdrop" class="btn btn-warning" ng-click="Editar(socio.idSocio, socio.nombre, socio.apellido, socio.cedula,socio.email, socio.telefono, socio.nacionalidad, socio.direccion, socio.tip_licencia) "><i class="fas fa-edit"></i> Editar</button></td>
+					<td><button type="button" class="btn btn-danger" ng-click="Eliminar(socio.idSocio)"> <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,78 @@
+<div ng-controller="navController">
+	<nav class="navbar navbar-light bg-light">
+		<a class="nav-link " href="" ng-click="homeview()">TRABAJOS</a>
+		<a class="nav-link " href="" ng-click="oficinistasview()">OFICINISTAS</a>
+		<a class="nav-link " href="" ng-click="sociosview()">SOCIOS</a>
+		<a class="nav-link " href="" ng-click="busesview()">BUSES</a>
+		<a class="nav-link " href="" ng-click="empresasview()">EMPRESAS</a>
+		<a class="nav-link " href="" ng-click="logout()">Cerrar sesión</a>
+	</nav>
+</div>
+<br>
+<div ng-controller="trabajosController" ng-init="mostrar()" class="container" style="width:2500px;">
+	<h4 align="center">TRABAJOS EN CURSO</h4>
+	<br>
+	<div align="right">
+		<button type="button" class="btn btn-primary" ng-controller="navController" ng-click="createTrabajoview()"><i class="fas fa-plus"></i> Iniciar Nuevo Trabajo</button>
+	</div>
+	<br>
+	<div>
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Ruta</th>
+					<th scope="col">Personas</th>
+					<th scope="col">Propietario del bus</th>
+					<th scope="col">Servicio a la empresa</th>
+					<th scope="col">Más Información</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="tr in trabajos">
+					<td>{{tr.ruta}}</td>
+					<td>{{tr.n_personas}}</td>
+					<td>{{tr.socio}}</td>
+					<td>{{tr.empresa}}</td>
+					<td><button type="button" class="btn btn-danger" ng-click="information(tr.idTrabajo)"><i class="fas fa-info-circle"></i></button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+	<!-- <br>
+	<div>
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Hora de ingreso</th>
+					<th scope="col">Hora de salida</th>
+					<th scope="col">#Personas</th>
+					<th scope="col">Fecha de ingreso</th>
+					<th scope="col">Fecha de fin</th>
+					<th scope="col">Bus asignado</th>
+					<th scope="col">Chofer asignado</th>
+					<th scope="col">Empresa</th>
+					<th scope="col">Ruta Inicio</th>
+					<th scope="col">Ruta Fin</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="tr in trabajos">
+					<td>{{tr.hora_entrada}}</td>
+					<td>{{tr.hora_salida}}</td>
+					<td>{{tr.n_personas}}</td>
+					<td>{{tr.fecha_ingreso}}</td>
+					<td>{{tr.fecha_fin}}</td>
+					<td>{{tr.idBus}}</td>
+					<td>{{tr.idChofer}}</td>
+					<td>{{tr.idEmpresa}}</td>
+					<td>{{tr.ruta_inicio}}</td>
+					<td>{{tr.ruta_fin}}</td>
+					<td><button type="button" data-toggle="modal" data-target="#staticBackdrop" class="btn btn-warning" ng-click="Editar(tr.idTrabajo,tr.hora_entrada,tr.hora_salida,tr.n_personas,tr.fecha_ingreso,tr.fecha_fin,tr.idBus,tr.idChofer,tr.idEmpresa,tr.ruta_inicio,tr.ruta_fin) "><i class="fas fa-edit"></i> Editar</button></td>
+					<td><button type="button" class="btn btn-danger" ng-click="Eliminar(tr.idTrabajo)"> <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+-->

@@ -1,0 +1,97 @@
+<div ng-controller="navController">
+	<nav class="navbar navbar-light bg-light">
+		<a class="nav-link " href="" ng-click="homeview()">TRABAJOS</a>
+		<a class="nav-link " href="" ng-click="oficinistasview()">OFICINISTAS</a>
+		<a class="nav-link " href="" ng-click="sociosview()">SOCIOS</a>
+		<a class="nav-link " href="" ng-click="busesview()">BUSES</a>
+		<a class="nav-link " href="" ng-click="empresasview()">EMPRESAS</a>
+		<a class="nav-link " href="" ng-click="logout()">Cerrar sesión</a>
+	</nav>
+</div>
+<br>
+<div ng-controller="oficinistasController" ng-init="mostrar()" class="container" style="width:2500px;">
+	<h4 align="center">LISTA DE OFICINISTAS</h4>
+	<br>
+	<div align="right">
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop"><i class="fas fa-plus"></i> Agregar Nuevo Oficinista</button>
+	</div>
+	<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">DATOS DEL NUEVO OFICINISTA</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancelar()">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" name="idOficinista" ng-model="idOficinista" class="form-control" required/>
+					<label>Nombre</label>
+					<input type="text" name="nombre" ng-model="nombre" class="form-control" required/>
+					<br />
+					<label>Apellido</label>
+					<input type="text" name="apellido" ng-model="apellido" class="form-control" required/>
+					<br />
+					<label>Cédula</label>
+					<input type="text" name="cedula" ng-model="cedula" class="form-control" required/>
+					<br />
+					<label>Email</label>
+					<input type="email" name="email" ng-model="email" class="form-control" required/>
+					<br />
+					<label>Telefono</label>
+					<input type="text" name="telefono" ng-model="telefono" class="form-control" required />
+					<br />
+					<label>Nacionalidad</label>
+					<input type="text" name="nacionalidad" ng-model="nacionalidad" class="form-control" required />
+					<br />
+					<label>Dirección</label>
+					<input type="text" name="direccion" ng-model="direccion" class="form-control" required />
+					<br />
+					<label>Contraseña</label>
+					<input type="text" name="password" ng-model="password" class="form-control" required />
+					<br />
+					<label>Cargo</label>
+					<input type="text" name="cargo" ng-model="cargo" class="form-control" required />
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" ng-click="cancelar()" data-dismiss="modal" >Cancelar</button>
+					<input type="submit" name="btnInsertar" class="btn btn-info" ng-click="insertar()" value="{{boton}}" data-dismiss="modal"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div>
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Nombre</th>
+					<th scope="col">Apellido</th>
+					<th scope="col">Cédula</th>
+					<th scope="col">Email</th>
+					<th scope="col">Telefono</th>
+					<th scope="col">Nacionalidad</th>
+					<th scope="col">Dirección</th>
+					<th scope="col">Cargo</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="of in oficinistas">
+					<td>{{of.nombre}}</td>
+					<td>{{of.apellido}}</td>
+					<td>{{of.cedula}}</td>
+					<td>{{of.email}}</td>
+					<td>{{of.telefono}}</td>
+					<td>{{of.nacionalidad}}</td>
+					<td>{{of.direccion}}</td>
+					<td>{{of.cargo}}</td>
+					<td><button type="button" data-toggle="modal" data-target="#staticBackdrop" class="btn btn-warning" ng-click="Editar(of.idOficinista, of.nombre, of.apellido, of.cedula,of.email, of.telefono, of.nacionalidad,of.direccion, of.cargo) "><i class="fas fa-edit"></i> Editar</button></td>
+					<td><button type="button" class="btn btn-danger" ng-click="Eliminar(of.idOficinista)"> <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
